@@ -126,11 +126,13 @@ def search(request):
 
 def disable_rule(request, rule_id):
     ruleparser.Disable_Rule(rule_id)
-    return redirect('/')
+    page = request.GET.get('page')
+    return redirect(f'/?page={page}#{rule_id}')
 
 def enable_rule(request, rule_id):
     ruleparser.Enable_Rule(rule_id)
-    return redirect('/')
+    page = request.GET.get('page')
+    return redirect(f'/?page={page}#{rule_id}')
 
 def addtag(request, rule_id, cat_name):
     ruleparser.Add_Tag(rule_id,cat_name)

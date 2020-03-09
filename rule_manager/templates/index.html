@@ -67,13 +67,12 @@
         </tr>
         {% for row in rule_list %}
         {% if row.state == 0 %}
-        <tr class="success">
+        <tr class="success" id="{{row.id}}">
         {% elif row.state == 1 %}
-        <tr class="danger">
+        <tr class="danger" id="{{row.id}}">
         {% else %}
-        <tr>
+        <tr id="{{row.id}}">
         {% endif %}
-
             <td>{{row.id}}</td>
             <td><a href="/rule/{{row.id}}">{{row.rule_name}}</a></td>
             <td>
@@ -86,9 +85,9 @@
             <td>{{row.rule_version}}
             </td>
             <td>{% if row.rule_active %}
-             <a href="/disable/{{row.id}}"><button type="button" role="button" class="btn btn-primary">Active</button></a>
+             <a href="/disable/{{row.id}}?page={{rule_list.number}}"><button type="button" role="button" class="btn btn-primary">Active</button></a>
              {% else %}
-             <a href="/enable/{{row.id}}">
+             <a href="/enable/{{row.id}}?page={{rule_list.number}}">
               <button type="button" class="btn btn-outline-warning">Disabled</button>
               </a>
               {%endif%}
