@@ -49,11 +49,11 @@
         </tr>
         {% for row in results %}
         {% if row.state == 0 %}
-        <tr class="success">
+        <tr class="success" id="{{row.id}}">
         {% elif row.state == 1 %}
-        <tr class="danger">
+        <tr class="danger" id="{{row.id}}">
         {% else %}
-        <tr>
+        <tr id="{{row.id}}">
         {% endif %}
 
             <td>{{row.id}}</td>
