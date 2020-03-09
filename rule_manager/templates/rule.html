@@ -108,7 +108,7 @@
                     <input type="text" class="form-control" name="stringName" value="{{string.string_name}}">
                 </div>
                 <div class="col-md-4">
-                    <input type="text" class="form-control" name="stringValues" value="{{string.string_value|safe}}">
+                    <input type="text" class="form-control" name="stringValues" value="{{string.string_value}}">
                 </div>
                 
                 {% if string.string_nocase %}
@@ -149,7 +149,6 @@
             
         </div>
     <button class="btn btn-sm" type="button" onClick="addInput('stringsForm');">Add Field</button>
-
     </div>
 </div>
 
